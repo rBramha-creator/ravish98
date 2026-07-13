@@ -1,0 +1,155 @@
+/* ============================================================
+   FRAMES — shared design system
+   Bebas Neue (display) + Fraunces italic (editorial accent) + Inter (UI)
+   Palette: ink #0c0c0c / bone #f5f3ee / amber #7a0a0a / gray #8a8a8a
+   ============================================================ */
+
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{--ink:#fdf8ee;--bone:#2a0a06;--amber:#7a0a0a;--gray:#8a766c;--white:#ffffff;--nav-h:72px;}
+html{scroll-behavior:scroll;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--ink);
+  color:var(--bone);
+  font-family:'Inter',sans-serif;
+  font-weight:300;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+::selection{background:var(--amber);color:var(--ink);}
+img{max-width:100%;}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+  outline:1px solid var(--amber); outline-offset:3px;
+}
+
+/* ── grain overlay ── */
+#grain{
+  position:fixed; inset:0; z-index:300; pointer-events:none;
+  opacity:0.035; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ── scroll progress ── */
+#scroll-progress{position:fixed;top:0;left:0;height:2px;background:var(--amber);z-index:250;width:0%;}
+
+/* ── nav ── */
+nav{
+  position:fixed; top:0; left:0; right:0; height:var(--nav-h);
+  z-index:200; display:flex; align-items:center; justify-content:space-between;
+  padding:0 40px; mix-blend-mode:difference;
+}
+.nav-logo{
+  font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:0.08em;
+  color:var(--white); text-decoration:none;
+}
+.nav-links{display:flex; gap:34px; list-style:none;}
+.nav-links a{
+  font-size:11px; font-weight:500; letter-spacing:0.16em; text-transform:uppercase;
+  color:var(--white); text-decoration:none; position:relative; padding-bottom:4px;
+}
+.nav-links a::after{
+  content:''; position:absolute; left:0; right:0; bottom:0; height:1px;
+  background:var(--white); transform:scaleX(0); transform-origin:left;
+  transition:transform 0.3s ease;
+}
+.nav-links a:hover::after, .nav-links a.active::after{transform:scaleX(1);}
+.nav-burger{ display:none; background:none; border:none; cursor:pointer; padding:8px; z-index:201; }
+.nav-burger span{ display:block; width:22px; height:1px; background:var(--white); margin:5px 0; }
+@media (max-width:780px){
+  .nav-links{display:none;}
+  .nav-burger{ display:block; }
+}
+
+/* ── mobile nav drawer ── */
+#mobile-nav{
+  position:fixed; inset:0; z-index:199; background:var(--ink);
+  display:flex; flex-direction:column; align-items:flex-start; justify-content:center;
+  gap:28px; padding:0 40px; transform:translateX(100%);
+  transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+#mobile-nav.open{ transform:translateX(0); }
+#mobile-nav a{
+  font-family:'Bebas Neue',sans-serif; font-size:48px; letter-spacing:0.02em;
+  color:var(--bone); text-decoration:none; text-transform:uppercase;
+}
+#mobile-nav a.active{ color:var(--amber); }
+
+/* ── eyebrow / section labels ── */
+.label-rule{
+  font-size:11px; letter-spacing:0.28em; text-transform:uppercase; color:var(--amber);
+  margin-bottom:18px; display:flex; align-items:center; gap:14px;
+}
+.label-rule::after{ content:''; flex:1; height:1px; background:rgba(42,18,12,0.15); }
+
+/* ── page header (interior pages) ── */
+.page-header{
+  padding:calc(var(--nav-h) + 64px) 40px 60px;
+}
+.page-eyebrow{
+  font-size:11px; letter-spacing:0.32em; text-transform:uppercase; color:var(--amber);
+  margin-bottom:18px;
+}
+.page-title{
+  font-family:'Qwitcher Grypen',cursive;
+  font-weight:700;
+  font-size:clamp(76px,13vw,180px);
+  line-height:0.82; letter-spacing:0.005em; color:var(--bone);
+}
+.page-title .it{
+  font-family:'Qwitcher Grypen',cursive; font-weight:700;
+  color:var(--amber); font-size:1em; display:inline-block;
+}
+.page-sub{
+  max-width:560px; margin-top:22px;
+  font-family:'Fraunces',serif; font-style:italic; font-weight:300;
+  font-size:18px; line-height:1.5; color:var(--gray);
+}
+
+@media(max-width:600px){
+  .page-header{ padding:calc(var(--nav-h) + 36px) 20px 40px; }
+}
+
+/* ── footer ── */
+footer{
+  margin-top:120px; padding:56px 40px 40px; border-top:1px solid rgba(42,18,12,0.1);
+  display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px;
+}
+.footer-brand{ font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:0.1em; color:var(--bone); }
+.footer-copy{ font-size:11px; color:var(--gray); letter-spacing:0.04em; }
+.footer-links{ display:flex; gap:26px; }
+.footer-links a{ font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gray); text-decoration:none; transition:color 0.2s; }
+.footer-links a:hover{ color:var(--amber); }
+
+@media(max-width:600px){
+  footer{ padding:40px 20px 32px; margin-top:80px; }
+}
+
+/* ── fade up utility ── */
+.fade-up{ opacity:0; transform:translateY(24px); animation:fadeUp 0.9s ease forwards; }
+@keyframes fadeUp{ to{opacity:1; transform:translateY(0);} }
+.delay-1{ animation-delay:0.15s; }
+.delay-2{ animation-delay:0.3s; }
+.delay-3{ animation-delay:0.45s; }
+
+/* ── reveal on scroll ── */
+.reveal{ opacity:0; transform:translateY(30px); transition:opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+.reveal.in-view{ opacity:1; transform:translateY(0); }
+
+/* ── buttons ── */
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  font-size:11px; letter-spacing:0.18em; text-transform:uppercase;
+  color:var(--ink); background:var(--bone); border:1px solid var(--bone);
+  padding:16px 30px; text-decoration:none; cursor:pointer;
+  transition:background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.btn:hover{ background:transparent; color:var(--bone); border-color:var(--bone); }
+.btn-outline{
+  background:transparent; color:var(--bone); border:1px solid rgba(42,18,12,0.3);
+}
+.btn-outline:hover{ background:var(--bone); color:var(--ink); border-color:var(--bone); }

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Ravish Bramhe</title>
+<meta name="description" content="Get in touch with Ravish Bramhe — freelance photographer and cinematographer based in Varanasi, India.">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact — Ravish Bramhe">
+<meta property="og:description" content="Get in touch with Ravish Bramhe — freelance photographer and cinematographer based in Varanasi, India.">
+<meta property="og:image" content="assets/images/calvados/IMG_8337.jpg">
+<meta property="og:url" content="contact.html">
+<meta property="og:site_name" content="Ravish Bramhe — Frames">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Contact — Ravish Bramhe">
+<meta name="twitter:description" content="Get in touch with Ravish Bramhe — freelance photographer and cinematographer based in Varanasi, India.">
+<meta name="twitter:image" content="assets/images/calvados/IMG_8337.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Qwitcher+Grypen:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  .contact-wrap{
+    padding:0 40px 140px; display:grid; grid-template-columns:0.9fr 1.1fr; gap:64px; align-items:start;
+  }
+  @media(max-width:900px){ .contact-wrap{ grid-template-columns:1fr; padding:0 20px 90px; gap:48px; } }
+
+  /* ── info column ── */
+  .contact-info p{ font-size:15px; line-height:1.8; color:var(--gray); margin-bottom:36px; max-width:420px; }
+  .contact-detail{ margin-bottom:28px; }
+  .contact-detail .k{ font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber); margin-bottom:6px; }
+  .contact-detail .v{ font-family:'Fraunces',serif; font-style:italic; font-weight:300; font-size:20px; color:var(--bone); }
+  .contact-detail a{ color:inherit; text-decoration:none; border-bottom:1px solid rgba(42,18,12,0.25); transition:border-color 0.2s, color 0.2s; }
+  .contact-detail a:hover{ color:var(--amber); border-color:var(--amber); }
+
+  .social-row{ display:flex; gap:18px; margin-top:40px; }
+  .social-row a{
+    font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gray);
+    text-decoration:none; padding-bottom:4px; border-bottom:1px solid transparent; transition:color 0.2s, border-color 0.2s;
+  }
+  .social-row a:hover{ color:var(--amber); border-color:var(--amber); }
+
+  /* ── form ── */
+  form{ display:flex; flex-direction:column; gap:26px; }
+  .field{ position:relative; }
+  .field label{
+    display:block; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gray); margin-bottom:10px;
+  }
+  .field input, .field textarea, .field select{
+    width:100%; background:transparent; border:none; border-bottom:1px solid rgba(42,18,12,0.25);
+    color:var(--bone); font-family:'Inter',sans-serif; font-size:16px; font-weight:300;
+    padding:10px 0; outline:none; transition:border-color 0.25s ease;
+  }
+  .field select{ -webkit-appearance:none; appearance:none; cursor:pointer; }
+  .field select option{ background:var(--ink); color:var(--bone); }
+  .field input::placeholder, .field textarea::placeholder{ color:rgba(42,18,12,0.3); }
+  .field input:focus, .field textarea:focus, .field select:focus{ border-color:var(--amber); }
+  .field textarea{ resize:vertical; min-height:120px; }
+
+  .field-row{ display:grid; grid-template-columns:1fr 1fr; gap:26px; }
+  @media(max-width:560px){ .field-row{ grid-template-columns:1fr; } }
+
+  .form-submit{
+    margin-top:8px; align-self:flex-start;
+    font-size:11px; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--ink); background:var(--bone); border:1px solid var(--bone);
+    padding:16px 38px; cursor:pointer; transition:background 0.25s ease, color 0.25s ease;
+  }
+  .form-submit:hover{ background:transparent; color:var(--bone); }
+
+  .form-note{
+    font-size:12px; color:var(--gray); margin-top:6px; line-height:1.6; max-width:420px;
+  }
+
+  /* ── map-ish location strip ── */
+  .location-strip{
+    padding:80px 40px; border-top:1px solid rgba(42,18,12,0.1);
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:24px;
+  }
+  .location-strip .big{
+    font-family:'Qwitcher Grypen',cursive; font-weight:700; font-size:clamp(42px,6.5vw,72px);
+    color:var(--bone); line-height:0.85;
+  }
+  .location-strip .big .it{ font-family:'Qwitcher Grypen',cursive; font-weight:700; color:var(--amber); }
+  .location-strip .meta{ font-size:12px; color:var(--gray); letter-spacing:0.05em; max-width:280px; }
+  @media(max-width:600px){ .location-strip{ padding:60px 20px; } }
+</style>
+</head>
+<body>
+
+<div id="grain"></div>
+<div id="scroll-progress"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Frames</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="portfolio.html">Work</a></li>
+    <li><a href="showreel.html">Reel</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html" class="active">Contact</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="mobile-nav" aria-hidden="true">
+  <a href="index.html">Home</a>
+  <a href="portfolio.html">Work</a>
+  <a href="showreel.html">Reel</a>
+  <a href="about.html">About</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html" class="active">Contact</a>
+</div>
+
+<header class="page-header">
+  <p class="page-eyebrow fade-up">Let's Talk</p>
+  <h1 class="page-title fade-up delay-1">Get in <span class="it">touch</span></h1>
+  <p class="page-sub fade-up delay-2">Have a shoot, a brand film, or a story in mind? Tell me about it.</p>
+</header>
+
+<section class="contact-wrap">
+  <div class="contact-info reveal">
+    <p>Based in Varanasi, available for projects across India and beyond — fashion, product, events, interiors, and brand film.</p>
+
+    <div class="contact-detail">
+      <div class="k">Email</div>
+      <div class="v"><a href="mailto:ravishbramhe@gmail.com">ravishbramhe@gmail.com</a></div>
+    </div>
+    <div class="contact-detail">
+      <div class="k">Phone</div>
+      <div class="v"><a href="tel:+917380795886">+91-7380795886</a></div>
+    </div>
+    <div class="contact-detail">
+      <div class="k">Based in</div>
+      <div class="v">Varanasi, Uttar Pradesh, India</div>
+    </div>
+
+    <div class="social-row">
+      <a href="https://www.instagram.com/indian_ghummakad98" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.linkedin.com/in/ravish-bramhe-965a94184/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+
+  <div class="reveal">
+    <!--
+      NOTE: this form has no backend wired up yet.
+      Easiest options:
+        1) Replace the <form> action below with a Formspree/Getform endpoint
+        2) Or swap the submit button for a plain mailto: link
+      Edit the placeholder text and fields freely in Notepad.
+    -->
+    <form id="contact-form" action="#" method="POST">
+      <div class="field-row">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="project">Project type</label>
+        <select id="project" name="project">
+          <option value="">Select one</option>
+          <option value="fashion">Fashion / Lifestyle</option>
+          <option value="product">Product / Commercial</option>
+          <option value="events">Corporate Event / Conference</option>
+          <option value="interior">Interior / Architectural</option>
+          <option value="film">Brand Film / Cinematic Video</option>
+          <option value="other">Something else</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="message">Tell me about it</label>
+        <textarea id="message" name="message" placeholder="Dates, location, scope — whatever you've got." required></textarea>
+      </div>
+
+      <button type="submit" class="form-submit">Send message</button>
+      <p class="form-note">This form isn't connected to an inbox yet — for now, email <a href="mailto:ravishbramhe@gmail.com" style="color:var(--gray); text-decoration:underline;">ravishbramhe@gmail.com</a> directly and I'll get back to you within 1–2 days.</p>
+    </form>
+  </div>
+</section>
+
+<section class="location-strip reveal">
+  <div class="big">Working from <span class="it">Varanasi</span>, shooting everywhere.</div>
+  <div class="meta">Open to travel for the right project — fashion campaigns, documentary work, and brand films across India.</div>
+</section>
+
+<footer>
+  <div class="footer-brand">Frames</div>
+  <div class="footer-copy">© <span class="footer-year">2025</span> Ravish Bramhe. All rights reserved</div>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/indian_ghummakad98" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.linkedin.com/in/ravish-bramhe-965a94184/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+<script>
+  // Placeholder submit handler — replace with real form backend.
+  document.getElementById('contact-form').addEventListener('submit', function(e){
+    e.preventDefault();
+    alert('This form is not yet connected to an inbox. Please email ravishbramhe@gmail.com directly, or wire this form up to a service like Formspree.');
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Post — Ravish Bramhe</title>
+<meta name="description" content="">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Blog — Ravish Bramhe">
+<meta property="og:description" content="Notes on photography, cinematography, and the stories behind the work — from Ravish Bramhe.">
+<meta property="og:image" content="assets/images/calvados/IMG_8337.jpg">
+<meta property="og:url" content="blog-post.html">
+<meta property="og:site_name" content="Ravish Bramhe — Frames">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog — Ravish Bramhe">
+<meta name="twitter:description" content="Notes on photography, cinematography, and the stories behind the work — from Ravish Bramhe.">
+<meta name="twitter:image" content="assets/images/calvados/IMG_8337.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Qwitcher+Grypen:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  .post-header{ padding:calc(var(--nav-h) + 56px) 40px 0; max-width:760px; margin:0 auto; }
+  .post-back{
+    font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gray);
+    text-decoration:none; display:inline-flex; align-items:center; gap:8px; margin-bottom:28px; transition:color 0.2s;
+  }
+  .post-back:hover{ color:var(--amber); }
+  .post-date{ font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--amber); margin-bottom:18px; }
+  .post-title{
+    font-family:'Qwitcher Grypen',cursive; font-weight:700; font-size:clamp(40px,6.5vw,68px);
+    line-height:0.92; color:var(--bone); margin-bottom:28px;
+  }
+  .post-cover{ aspect-ratio:16/9; overflow:hidden; background:#efe6d6; margin:0 -40px 56px; }
+  .post-cover img{ width:100%; height:100%; object-fit:cover; filter:grayscale(0.2) contrast(1.02); }
+
+  .post-body{ max-width:760px; margin:0 auto; padding:0 40px 120px; }
+  .post-body p{ font-size:16.5px; line-height:1.9; color:var(--gray); margin-bottom:26px; }
+  .post-body p:first-of-type{
+    font-family:'Fraunces',serif; font-style:italic; font-weight:300; font-size:22px;
+    color:var(--bone); line-height:1.55; margin-bottom:32px;
+  }
+  .post-body strong{ color:var(--bone); font-weight:500; }
+  .post-body em{ color:var(--bone); }
+
+  @media(max-width:600px){
+    .post-header{ padding:calc(var(--nav-h) + 30px) 20px 0; }
+    .post-cover{ margin:0 0 40px; }
+    .post-body{ padding:0 20px 80px; }
+  }
+
+  .post-footer-nav{
+    max-width:760px; margin:0 auto; padding:0 40px 100px;
+    display:flex; justify-content:space-between; gap:24px; border-top:1px solid rgba(42,18,12,0.1); padding-top:40px;
+  }
+  .post-footer-nav a{
+    font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:var(--gray);
+    text-decoration:none; transition:color 0.2s;
+  }
+  .post-footer-nav a:hover{ color:var(--amber); }
+  @media(max-width:600px){ .post-footer-nav{ padding:0 20px 60px; } }
+
+  .not-found{ padding:calc(var(--nav-h) + 100px) 40px 140px; text-align:center; }
+  .not-found h1{ font-family:'Bebas Neue',sans-serif; font-size:clamp(40px,8vw,90px); color:var(--bone); text-transform:uppercase; margin-bottom:20px; }
+  .not-found p{ color:var(--gray); margin-bottom:32px; }
+</style>
+</head>
+<body>
+
+<div id="grain"></div>
+<div id="scroll-progress"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Frames</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="portfolio.html">Work</a></li>
+    <li><a href="showreel.html">Reel</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="mobile-nav" aria-hidden="true">
+  <a href="index.html">Home</a>
+  <a href="portfolio.html">Work</a>
+  <a href="showreel.html">Reel</a>
+  <a href="about.html">About</a>
+  <a href="blog.html" class="active">Blog</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<div id="post-content"></div>
+
+<footer>
+  <div class="footer-brand">Frames</div>
+  <div class="footer-copy">© <span class="footer-year">2025</span> Ravish Bramhe. All rights reserved</div>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/indian_ghummakad98" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.linkedin.com/in/ravish-bramhe-965a94184/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+<script src="assets/js/blog-data.js"></script>
+<script>
+(function(){
+  const params = new URLSearchParams(location.search);
+  const slug = params.get('slug');
+  const posts = (typeof BLOG_POSTS !== 'undefined') ? BLOG_POSTS : [];
+  const post = posts.find(p => p.slug === slug);
+  const container = document.getElementById('post-content');
+
+  if (!post){
+    container.innerHTML = `
+      <div class="not-found">
+        <h1>Post not found</h1>
+        <p>This post may have moved or doesn't exist yet.</p>
+        <a href="blog.html" class="btn">Back to journal</a>
+      </div>
+    `;
+    return;
+  }
+
+  document.getElementById('page-title').textContent = post.title + ' — Ravish Bramhe';
+
+  const idx = posts.indexOf(post);
+  const prev = posts[idx - 1];
+  const next = posts[idx + 1];
+
+  container.innerHTML = `
+    <header class="post-header">
+      <a href="blog.html" class="post-back">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to journal
+      </a>
+      <div class="post-date">${post.date}</div>
+      <h1 class="post-title">${post.title}</h1>
+    </header>
+    <div class="post-cover"><img src="${post.cover}" alt="${post.title}"></div>
+    <article class="post-body">${post.body}</article>
+    <div class="post-footer-nav">
+      ${prev ? `<a href="blog-post.html?slug=${prev.slug}">← ${prev.title}</a>` : '<span></span>'}
+      ${next ? `<a href="blog-post.html?slug=${next.slug}">${next.title} →</a>` : '<span></span>'}
+    </div>
+  `;
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Showreel — Frames</title>
+<meta name="description" content="A selection of motion work by Ravish Bramhe — event films, brand stories, and behind-the-scenes footage from Varanasi and beyond.">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Showreel — Frames | Ravish Bramhe">
+<meta property="og:description" content="A selection of motion work by Ravish Bramhe — event films, brand stories, and behind-the-scenes footage.">
+<meta property="og:image" content="assets/images/showreel/curry-band.jpg">
+<meta property="og:url" content="showreel.html">
+<meta property="og:site_name" content="Ravish Bramhe — Frames">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Showreel — Frames | Ravish Bramhe">
+<meta name="twitter:description" content="A selection of motion work by Ravish Bramhe — event films, brand stories, and behind-the-scenes footage.">
+<meta name="twitter:image" content="assets/images/showreel/curry-band.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Qwitcher+Grypen:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  /* ── reel intro line ── */
+  .reel-intro{ padding:0 40px 70px; max-width:760px; }
+  .reel-intro p{
+    font-family:'Fraunces',serif; font-style:italic; font-weight:300;
+    font-size:clamp(20px,2.6vw,26px); line-height:1.55; color:var(--gray);
+  }
+  .reel-intro .accent{ color:var(--amber); font-style:normal; }
+  @media(max-width:600px){ .reel-intro{ padding:0 20px 50px; } }
+
+  /* ── reel grid ── */
+  .reel-section{ padding:0 40px 140px; }
+  .reel-grid{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:22px;
+  }
+  .reel-card{
+    position:relative; aspect-ratio:9/16; overflow:hidden; background:#1a0a06;
+    cursor:pointer;
+  }
+  .reel-card video{
+    width:100%; height:100%; object-fit:cover; display:block;
+    filter:grayscale(0.15) contrast(1.03);
+  }
+  .reel-card-overlay{
+    position:absolute; inset:0; z-index:2; pointer-events:none;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    background:linear-gradient(180deg, rgba(12,6,4,0) 45%, rgba(12,6,4,0.78) 100%);
+    transition:opacity 0.3s ease;
+  }
+  .reel-card.is-playing .reel-card-overlay{ opacity:0; }
+  .reel-card:hover .reel-card-overlay{ opacity:1; }
+  .reel-card-label{
+    padding:16px; font-family:'Bebas Neue',sans-serif; font-size:16px;
+    letter-spacing:0.05em; text-transform:uppercase; color:var(--white); line-height:1.2;
+  }
+  .reel-card-label span{ display:block; font-family:'Inter',sans-serif; font-weight:400; font-size:10px; letter-spacing:0.14em; color:var(--gray); margin-top:4px; text-transform:uppercase; }
+  .reel-play{
+    position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+    width:52px; height:52px; border-radius:50%; z-index:3;
+    background:rgba(253,248,238,0.92); display:flex; align-items:center; justify-content:center;
+    transition:opacity 0.25s ease, transform 0.25s ease; pointer-events:none;
+  }
+  .reel-play svg{ width:16px; height:16px; margin-left:2px; }
+  .reel-card.is-playing .reel-play{ opacity:0; transform:translate(-50%,-50%) scale(0.8); }
+  .reel-card:hover .reel-play{ transform:translate(-50%,-50%) scale(1.08); }
+  .reel-mute{
+    position:absolute; bottom:14px; right:14px; z-index:3;
+    width:30px; height:30px; border-radius:50%; background:rgba(12,6,4,0.55);
+    display:flex; align-items:center; justify-content:center; color:var(--white);
+    font-size:12px; opacity:0; transition:opacity 0.25s ease; border:none; cursor:pointer;
+  }
+  .reel-card.is-playing .reel-mute{ opacity:1; }
+
+  @media(max-width:1000px){ .reel-grid{ grid-template-columns:repeat(3,1fr); } }
+  @media(max-width:760px){ .reel-grid{ grid-template-columns:repeat(2,1fr); gap:12px; } .reel-section{ padding:0 20px 90px; } }
+  @media(max-width:460px){ .reel-grid{ grid-template-columns:1fr; max-width:340px; margin:0 auto; } }
+
+  .cta-strip{ padding:100px 40px; text-align:center; border-top:1px solid rgba(42,18,12,0.1); }
+  .cta-strip h2{
+    font-family:'Qwitcher Grypen',cursive; font-weight:700; font-size:clamp(50px,8.5vw,100px);
+    color:var(--bone); margin-bottom:22px; line-height:0.82;
+  }
+  .cta-strip .it{ font-family:'Qwitcher Grypen',cursive; font-weight:700; color:var(--amber); }
+</style>
+</head>
+<body>
+
+<div id="grain"></div>
+<div id="scroll-progress"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Frames</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="portfolio.html">Work</a></li>
+    <li><a href="showreel.html" class="active">Reel</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="mobile-nav" aria-hidden="true">
+  <a href="index.html">Home</a>
+  <a href="portfolio.html">Work</a>
+  <a href="showreel.html" class="active">Reel</a>
+  <a href="about.html">About</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<header class="page-header">
+  <p class="page-eyebrow fade-up">Motion Work</p>
+  <h1 class="page-title fade-up delay-1">The <span class="it">Showreel</span></h1>
+  <p class="page-sub fade-up delay-2">A running edit of recent films — live events, brand stories, and behind-the-scenes motion from the field.</p>
+</header>
+
+<section class="reel-intro reveal">
+  <p>Photography holds the moment still — <span class="accent">film lets it breathe</span>. These are a few recent pieces, shot and cut on location.</p>
+</section>
+
+<section class="reel-section">
+  <div class="reel-grid" id="reel-grid">
+    <div class="reel-card reveal" data-video="assets/videos/curry-band.mp4" data-poster="assets/images/showreel/curry-band.jpg" data-title="Curry Band" data-sub="Live in Sarnath, Varanasi">
+      <video src="assets/videos/curry-band.mp4" poster="assets/images/showreel/curry-band.jpg" muted loop playsinline preload="none"></video>
+      <div class="reel-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#2a0a06"><path d="M6 4l14 8-14 8V4z"/></svg></div>
+      <button class="reel-mute" aria-label="Toggle sound">🔇</button>
+      <div class="reel-card-overlay"><div class="reel-card-label">Curry Band<span>Live in Sarnath, Varanasi</span></div></div>
+    </div>
+
+    <div class="reel-card reveal" data-video="assets/videos/damilano-1.mp4" data-poster="assets/images/showreel/damilano-1.jpg" data-title="Damilano" data-sub="Hand Bag">
+      <video src="assets/videos/damilano-1.mp4" poster="assets/images/showreel/damilano-1.jpg" muted loop playsinline preload="none"></video>
+      <div class="reel-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#2a0a06"><path d="M6 4l14 8-14 8V4z"/></svg></div>
+      <button class="reel-mute" aria-label="Toggle sound">🔇</button>
+      <div class="reel-card-overlay"><div class="reel-card-label">Damilano<span>Hand Bag</span></div></div>
+    </div>
+
+    <div class="reel-card reveal" data-video="assets/videos/damilano-2.mp4" data-poster="assets/images/showreel/damilano-2.jpg" data-title="Damilano" data-sub="Laptop Bag">
+      <video src="assets/videos/damilano-2.mp4" poster="assets/images/showreel/damilano-2.jpg" muted loop playsinline preload="none"></video>
+      <div class="reel-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#2a0a06"><path d="M6 4l14 8-14 8V4z"/></svg></div>
+      <button class="reel-mute" aria-label="Toggle sound">🔇</button>
+      <div class="reel-card-overlay"><div class="reel-card-label">Damilano<span>Laptop Bag</span></div></div>
+    </div>
+
+    <div class="reel-card reveal" data-video="assets/videos/damilano-3.mp4" data-poster="assets/images/showreel/damilano-3.jpg" data-title="Damilano" data-sub="Luggage Bag">
+      <video src="assets/videos/damilano-3.mp4" poster="assets/images/showreel/damilano-3.jpg" muted loop playsinline preload="none"></video>
+      <div class="reel-play" aria-hidden="true"><svg viewBox="0 0 24 24" fill="#2a0a06"><path d="M6 4l14 8-14 8V4z"/></svg></div>
+      <button class="reel-mute" aria-label="Toggle sound">🔇</button>
+      <div class="reel-card-overlay"><div class="reel-card-label">Damilano<span>Luggage Bag</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-strip reveal">
+  <h2>Got a story <span class="it">to film?</span></h2>
+  <a href="contact.html" class="btn">Start a conversation</a>
+</section>
+
+<footer>
+  <div class="footer-brand">Frames</div>
+  <div class="footer-copy">© <span class="footer-year">2025</span> Ravish Bramhe. All rights reserved</div>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/indian_ghummakad98" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.linkedin.com/in/ravish-bramhe-965a94184/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+<script src="assets/js/site.js"></script>
+<script>
+(function(){
+  const cards = document.querySelectorAll('.reel-card');
+
+  cards.forEach(card => {
+    const video = card.querySelector('video');
+    const muteBtn = card.querySelector('.reel-mute');
+
+    card.addEventListener('click', (e) => {
+      if (e.target === muteBtn) return;
+      if (video.paused){
+        // pause all other cards first
+        cards.forEach(c => {
+          if (c !== card){
+            const v = c.querySelector('video');
+            v.pause(); v.currentTime = 0; v.muted = true;
+            c.classList.remove('is-playing');
+            c.querySelector('.reel-mute').textContent = '🔇';
+          }
+        });
+        video.play();
+        card.classList.add('is-playing');
+      } else {
+        video.pause();
+        card.classList.remove('is-playing');
+      }
+    });
+
+    muteBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      video.muted = !video.muted;
+      muteBtn.textContent = video.muted ? '🔇' : '🔊';
+    });
+
+    video.addEventListener('ended', () => {
+      card.classList.remove('is-playing');
+    });
+  });
+})();
+</script>
+</body>
+</html>

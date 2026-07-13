@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMS BHU — Corporate Healthcare Photography | Frames</title>
+<meta name="description" content="Case study: documenting healthcare, education, research, and clinical excellence at the Institute of Medical Sciences, Banaras Hindu University.">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="IMS BHU — Corporate Healthcare Photography | Frames">
+<meta property="og:description" content="Case study: documenting healthcare, education, research, and clinical excellence at the Institute of Medical Sciences, Banaras Hindu University.">
+<meta property="og:image" content="assets/images/calvados/IMG_8337.jpg">
+<meta property="og:url" content="ims-bhu.html">
+<meta property="og:site_name" content="Ravish Bramhe — Frames">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="IMS BHU — Corporate Healthcare Photography | Frames">
+<meta name="twitter:description" content="Case study: documenting healthcare, education, research, and clinical excellence at the Institute of Medical Sciences, Banaras Hindu University.">
+<meta name="twitter:image" content="assets/images/calvados/IMG_8337.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Qwitcher+Grypen:wght@400;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;1,9..144,300;1,9..144,400;1,9..144,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  :root{--ink:#fdf8ee;--bone:#2a0a06;--amber:#7a0a0a;--gray:#8a766c;--white:#ffffff;--nav-h:72px;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--ink);
+    color:var(--bone);
+    font-family:'Inter',sans-serif;
+    font-weight:300;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--amber);color:var(--ink);}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  #grain{
+    position:fixed; inset:0; z-index:300; pointer-events:none;
+    opacity:0.035; mix-blend-mode:overlay;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  #scroll-progress{position:fixed;top:0;left:0;height:2px;background:var(--amber);z-index:250;width:0%;}
+
+  nav{
+    position:fixed; top:0; left:0; right:0; height:var(--nav-h);
+    z-index:200; display:flex; align-items:center; justify-content:space-between;
+    padding:0 40px; mix-blend-mode:difference;
+  }
+  .nav-logo{
+    font-family:'Bebas Neue',sans-serif; font-size:22px; letter-spacing:0.08em;
+    color:var(--white); text-decoration:none;
+  }
+  .nav-links{display:flex; gap:34px; list-style:none;}
+  .nav-links a{
+    font-size:11px; font-weight:500; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--white); text-decoration:none; position:relative; padding-bottom:4px;
+  }
+  .nav-links a::after{
+    content:''; position:absolute; left:0; right:0; bottom:0; height:1px;
+    background:var(--white); transform:scaleX(0); transform-origin:left;
+    transition:transform 0.3s ease;
+  }
+  .nav-links a:hover::after, .nav-links a.active::after{transform:scaleX(1);}
+  @media (max-width:780px){ .nav-links{display:none;} }
+  .nav-burger{ display:none; background:none; border:none; cursor:pointer; padding:8px; z-index:201; mix-blend-mode:normal; }
+  .nav-burger span{ display:block; width:22px; height:1px; background:var(--white); margin:5px 0; }
+  @media (max-width:780px){ .nav-burger{ display:block; } }
+  #mobile-nav{
+    position:fixed; inset:0; z-index:199; background:var(--ink);
+    display:flex; flex-direction:column; align-items:flex-start; justify-content:center;
+    gap:28px; padding:0 40px; transform:translateX(100%);
+    transition:transform 0.4s cubic-bezier(0.16,1,0.3,1);
+  }
+  #mobile-nav.open{ transform:translateX(0); }
+  #mobile-nav a{
+    font-family:'Bebas Neue',sans-serif; font-size:44px; letter-spacing:0.02em;
+    color:var(--bone); text-decoration:none; text-transform:uppercase;
+  }
+  #mobile-nav a.active{ color:var(--amber); }
+
+  a{color:inherit;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative; height:100vh; min-height:600px;
+    display:flex; flex-direction:column; justify-content:flex-end;
+    overflow:hidden;
+  }
+  .hero-bg{ position:absolute; inset:0; z-index:0; }
+  .hero-bg img{
+    width:100%; height:100%; object-fit:cover; object-position:center 30%;
+    filter:grayscale(0.35) contrast(1.08) brightness(0.55);
+    transform:scale(1.08);
+    animation:heroIn 1.8s cubic-bezier(0.16,1,0.3,1) forwards;
+  }
+  @keyframes heroIn{ to{ transform:scale(1); } }
+  .hero-bg::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(12,12,12,0.2) 0%, rgba(12,12,12,0.5) 45%, rgba(12,12,12,0.84) 78%, rgba(12,12,12,0.94) 92%, var(--ink) 100%);
+  }
+  .hero-content{ position:relative; z-index:2; padding:0 40px 68px; max-width:980px; }
+  .hero-eyebrow{
+    font-size:11px; letter-spacing:0.3em; text-transform:uppercase;
+    color:#e8b9a0; margin-bottom:16px;
+    opacity:0; animation:fadeUp 0.9s ease 0.5s forwards;
+  }
+  .hero-eyebrow .sub{ display:block; color:rgba(253,248,238,0.65); font-size:11px; letter-spacing:0.24em; margin-top:6px; }
+  .hero-title{
+    font-family:'Bebas Neue',sans-serif; font-weight:400;
+    font-size:clamp(38px,6.2vw,84px);
+    line-height:1.02; letter-spacing:0.01em; text-transform:uppercase;
+    color:var(--white);
+    opacity:0; animation:fadeUp 1s ease 0.65s forwards;
+  }
+  .hero-title .it{
+    font-family:'Fraunces',serif; font-style:italic; font-weight:300;
+    text-transform:none; color:#f5e9da; display:block; font-size:0.62em; margin-top:4px;
+  }
+  .hero-tags{
+    display:flex; flex-wrap:wrap; gap:10px 28px; margin-top:30px;
+    opacity:0; animation:fadeUp 1s ease 0.9s forwards;
+  }
+  .hero-tags span{
+    font-size:10px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(245,240,230,0.72);
+    display:flex; align-items:center; gap:8px;
+  }
+  .hero-tags span::before{ content:''; width:4px; height:4px; border-radius:50%; background:var(--amber); }
+  @keyframes fadeUp{ from{opacity:0; transform:translateY(24px);} to{opacity:1; transform:translateY(0);} }
+  .hero-scroll{
+    position:absolute; bottom:32px; right:40px; z-index:2;
+    display:flex; align-items:center; gap:10px;
+    font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gray);
+    opacity:0; animation:fadeUp 1s ease 1.15s forwards;
+  }
+  .hero-scroll-line{ width:1px; height:36px; background:var(--gray); position:relative; overflow:hidden; }
+  .hero-scroll-line::after{
+    content:''; position:absolute; top:-100%; left:0; width:100%; height:100%;
+    background:var(--amber); animation:scrollDown 1.8s ease-in-out infinite;
+  }
+  @keyframes scrollDown{ 0%{top:-100%;} 60%{top:100%;} 100%{top:100%;} }
+  @media(max-width:600px){ .hero-scroll{ right:20px; } .hero-content{ padding:0 20px 56px; } }
+
+  /* ---------- Section shell ---------- */
+  section{ padding:120px 40px; }
+  @media(max-width:780px){ section{ padding:80px 20px; } }
+  .label{
+    font-size:11px; letter-spacing:0.28em; text-transform:uppercase; color:var(--amber);
+    margin-bottom:18px; display:flex; align-items:center; gap:14px;
+  }
+  .label::after{ content:''; flex:1; height:1px; background:rgba(42,18,12,0.15); }
+
+  /* ---------- Overview ---------- */
+  .overview{ display:grid; grid-template-columns:0.8fr 1.2fr; gap:80px; padding-top:0; }
+  @media(max-width:900px){ .overview{ grid-template-columns:1fr; gap:40px; } }
+  .overview h2{
+    font-family:'Fraunces',serif; font-weight:300; font-style:italic;
+    font-size:clamp(28px,3.6vw,42px); line-height:1.25; color:var(--bone);
+  }
+  .overview-body p{
+    font-size:16px; line-height:1.75; color:var(--bone); opacity:0.85; max-width:640px;
+  }
+  .overview-body p + p{ margin-top:20px; }
+  .detail-grid{
+    margin-top:56px; display:grid; grid-template-columns:repeat(2,1fr); gap:32px 40px;
+    border-top:1px solid rgba(42,18,12,0.12); padding-top:32px;
+  }
+  @media(max-width:560px){ .detail-grid{ grid-template-columns:1fr; } }
+  .detail-item h4{
+    font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gray); margin-bottom:10px;
+  }
+  .detail-item p{ font-size:15px; line-height:1.6; color:var(--bone); }
+  .detail-item ul{ list-style:none; }
+  .detail-item ul li{ font-size:15px; line-height:1.75; color:var(--bone); }
+  .detail-item ul li::before{ content:'— '; color:var(--gray); }
+
+  /* ---------- Stats ---------- */
+  .stats{
+    background:var(--bone); color:var(--ink); padding:100px 40px;
+    display:grid; grid-template-columns:repeat(4,1fr); gap:40px; text-align:center;
+  }
+  @media(max-width:860px){ .stats{ grid-template-columns:repeat(2,1fr); gap:56px 24px; } }
+  .stat-num{
+    font-family:'Bebas Neue',sans-serif; font-size:clamp(40px,5vw,64px);
+    color:#f5e9da; line-height:1;
+  }
+  .stat-label{
+    margin-top:12px; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(253,248,238,0.6);
+  }
+
+  /* ---------- Case study sections ---------- */
+  .case{ padding:130px 0 0; }
+  .case-block{ padding:0 40px 130px; }
+  @media(max-width:780px){ .case-block{ padding:0 20px 90px; } }
+  .case-head{ max-width:820px; margin-bottom:44px; }
+  .case-num{ font-family:'Bebas Neue',sans-serif; font-size:13px; letter-spacing:0.14em; color:var(--gray); }
+  .case-title{
+    font-family:'Qwitcher Grypen',cursive; font-weight:700;
+    font-size:clamp(48px,7vw,96px); line-height:0.9; color:var(--bone); margin:8px 0 20px;
+  }
+  .case-desc{ font-size:16px; line-height:1.75; color:var(--bone); opacity:0.85; max-width:680px; }
+  .case-tags{ display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; }
+  .case-tags span{
+    font-size:10px; letter-spacing:0.1em; text-transform:uppercase; color:var(--gray);
+    border:1px solid rgba(42,18,12,0.18); padding:7px 14px; border-radius:100px;
+  }
+  .case-note{
+    margin-top:22px; font-family:'Fraunces',serif; font-style:italic; font-size:14px;
+    color:var(--gray); max-width:680px;
+  }
+
+  .reel-track{
+    display:flex; gap:3px; overflow-x:auto; padding:0 40px 4px;
+    scroll-snap-type:x proximity; scrollbar-width:none;
+  }
+  .reel-track::-webkit-scrollbar{ display:none; }
+  @media(max-width:780px){ .reel-track{ padding:0 20px 4px; } }
+
+  .frame{
+    position:relative; flex:0 0 auto; height:380px;
+    scroll-snap-align:start; cursor:pointer; overflow:hidden; background:#efe6d6;
+  }
+  .frame img{
+    height:100%; width:auto; display:block; object-fit:cover;
+    filter:grayscale(0.15) contrast(1.02);
+    opacity:0;
+    transition:opacity 0.5s ease, transform 0.6s cubic-bezier(0.22,1,0.36,1), filter 0.4s ease;
+  }
+  .frame img.loaded{ opacity:1; }
+  .frame:hover img{ transform:scale(1.045); filter:grayscale(0) contrast(1.05); }
+  .frame-tab{
+    position:absolute; top:8px; left:8px;
+    font-family:'Bebas Neue',sans-serif; font-size:11px; letter-spacing:0.08em;
+    color:rgba(255,255,255,0.55); background:rgba(0,0,0,0.35);
+    padding:2px 7px; pointer-events:none;
+  }
+  @media(max-width:600px){ .frame{ height:260px; } }
+
+  /* ---------- Story ---------- */
+  .story{ display:grid; grid-template-columns:0.7fr 1.3fr; gap:80px; align-items:start; }
+  @media(max-width:900px){ .story{ grid-template-columns:1fr; gap:32px; } }
+  .story h2{
+    font-family:'Fraunces',serif; font-style:italic; font-weight:300;
+    font-size:clamp(30px,4vw,46px); line-height:1.25; color:var(--bone);
+  }
+  .story p{ font-size:17px; line-height:1.85; color:var(--bone); opacity:0.85; max-width:640px; }
+  .story p + p{ margin-top:22px; }
+
+  /* ---------- Role & Impact ---------- */
+  .grid-cards{ display:grid; grid-template-columns:repeat(4,1fr); gap:2px; background:rgba(42,18,12,0.12); }
+  @media(max-width:860px){ .grid-cards{ grid-template-columns:repeat(2,1fr); } }
+  .grid-cards .card{
+    background:var(--ink); padding:36px 24px; min-height:140px;
+    display:flex; align-items:flex-end;
+  }
+  .card span{
+    font-size:14px; line-height:1.4; color:var(--bone); font-weight:400;
+  }
+
+  .impact-cards{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:rgba(42,18,12,0.12); }
+  @media(max-width:780px){ .impact-cards{ grid-template-columns:1fr; } }
+  .impact-cards .card{
+    background:var(--ink); padding:40px 30px;
+  }
+  .impact-cards .card span{ font-family:'Fraunces',serif; font-style:italic; font-size:17px; }
+
+  /* ---------- Next project ---------- */
+  .next{
+    position:relative; height:70vh; min-height:440px; overflow:hidden;
+    display:flex; align-items:flex-end;
+  }
+  .next img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    filter:grayscale(0.3) brightness(0.55);
+  }
+  .next::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(12,12,12,0.1) 0%, rgba(12,12,12,0.7) 75%, var(--ink) 100%);
+  }
+  .next-content{ position:relative; z-index:2; padding:0 40px 56px; width:100%; display:flex; justify-content:space-between; align-items:flex-end; gap:20px; flex-wrap:wrap; }
+  .next-side p{ font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(253,248,238,0.6); margin-bottom:8px; }
+  .next-side h3{ font-family:'Bebas Neue',sans-serif; font-size:clamp(30px,4vw,44px); color:var(--white); }
+  .next-side.right{ text-align:right; }
+  .next-side.right a{ text-decoration:none; }
+  @media(max-width:600px){ .next-content{ padding:0 20px 40px; } }
+
+  .full-section{ display:none; padding:140px 0 60px; }
+  .full-section.active{ display:block; }
+  .full-header{
+    padding:0 40px; margin-bottom:48px;
+    display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap:20px;
+  }
+  .full-back{
+    font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gray);
+    background:none; border:none; cursor:pointer; display:flex; align-items:center; gap:8px;
+    transition:color 0.2s; margin-bottom:18px;
+  }
+  .full-back:hover{ color:var(--amber); }
+  .full-title{
+    font-family:'Qwitcher Grypen',cursive; font-weight:700; font-size:clamp(58px,9vw,130px);
+    color:var(--bone); line-height:0.78;
+  }
+  .full-count{ font-size:12px; color:var(--gray); letter-spacing:0.1em; }
+  .masonry{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:3px; padding:0 40px;
+  }
+  @media(max-width:900px){ .masonry{ grid-template-columns:repeat(2,1fr); } }
+  @media(max-width:560px){ .masonry{ grid-template-columns:1fr; padding:0 20px; } .full-header{ padding:0 20px; } }
+  .grid-item{
+    position:relative; cursor:pointer; aspect-ratio:4/5;
+    overflow:hidden; background:#efe6d6;
+  }
+  .grid-item img{
+    width:100%; height:100%; display:block; opacity:0;
+    object-fit:cover; object-position:center 30%;
+    filter:grayscale(0.15) contrast(1.02);
+    transition:opacity 0.5s ease, transform 0.5s cubic-bezier(0.22,1,0.36,1), filter 0.4s ease;
+  }
+  .grid-item img.loaded{ opacity:1; }
+  .grid-item:hover img{ transform:scale(1.035); filter:grayscale(0) contrast(1.05); }
+
+  #lightbox{
+    position:fixed; inset:0; z-index:999; background:rgba(8,8,8,0.97);
+    display:flex; align-items:center; justify-content:center; backdrop-filter:blur(6px);
+  }
+  #lightbox[hidden]{ display:none; }
+  .lb-img-wrap{ max-width:90vw; max-height:86vh; }
+  #lb-img{ max-width:90vw; max-height:86vh; width:auto; height:auto; display:block; }
+  .lb-close,.lb-nav{
+    position:fixed; background:none; border:none; cursor:pointer;
+    color:rgba(240,235,225,0.55); transition:color 0.2s; padding:10px; z-index:1000;
+  }
+  .lb-close:hover,.lb-nav:hover{ color:var(--amber); }
+  .lb-close{ top:20px; right:24px; }
+  .lb-nav{ top:50%; transform:translateY(-50%); }
+  .lb-prev{ left:14px; }
+  .lb-next{ right:14px; }
+  .lb-meta{
+    position:fixed; bottom:22px; left:50%; transform:translateX(-50%);
+    font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(240,235,225,0.6);
+    display:flex; gap:16px;
+  }
+  .lb-meta .amber{ color:#e8b9a0; }
+
+  footer{
+    margin-top:0; padding:56px 40px 40px; border-top:1px solid rgba(42,18,12,0.1);
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:18px;
+  }
+  .footer-brand{ font-family:'Bebas Neue',sans-serif; font-size:18px; letter-spacing:0.1em; color:var(--bone); }
+  .footer-copy{ font-size:11px; color:var(--gray); letter-spacing:0.04em; }
+  .footer-links{ display:flex; gap:26px; }
+  .footer-links a{ font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--gray); text-decoration:none; transition:color 0.2s; }
+  .footer-links a:hover{ color:var(--amber); }
+
+  a:focus-visible, button:focus-visible{ outline:1px solid var(--amber); outline-offset:3px; }
+
+  .reveal{ opacity:0; transform:translateY(30px); transition:opacity 0.7s ease, transform 0.7s cubic-bezier(0.16,1,0.3,1); }
+  .reveal.in-view{ opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body>
+
+<div id="grain"></div>
+<div id="scroll-progress"></div>
+
+<nav>
+  <a href="index.html" class="nav-logo">Frames</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="portfolio.html" class="active">Work</a></li>
+    <li><a href="showreel.html">Reel</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <button class="nav-burger" id="nav-burger" aria-label="Open menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="mobile-nav" aria-hidden="true">
+  <a href="index.html">Home</a>
+  <a href="portfolio.html" class="active">Work</a>
+  <a href="showreel.html">Reel</a>
+  <a href="about.html">About</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<header class="hero">
+  <div class="hero-bg"><img id="hero-bg-img" src="assets/images/ims-surgical/surgical_01.jpg" alt="Institute of Medical Sciences, BHU"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Corporate Healthcare Photography<span class="sub">Institute of Medical Sciences (IMS), BHU</span></p>
+    <h1 class="hero-title">Documenting Healthcare.<br>Education. Research.<span class="it">and clinical excellence.</span></h1>
+    <div class="hero-tags">
+      <span>Medical Conferences</span>
+      <span>Clinical Documentation</span>
+      <span>Institutional Branding</span>
+      <span>Academic Photography</span>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="hero-scroll-line"></div>Scroll</div>
+</header>
+
+<section class="overview">
+  <div>
+    <p class="label">Overview</p>
+    <h2>Project Overview</h2>
+  </div>
+  <div class="overview-body">
+    <p>IMS BHU entrusted me with documenting multiple institutional assignments across healthcare, academics, research, and medical conferences.</p>
+    <p>The objective was to create authentic visual documentation reflecting clinical excellence, education, innovation, and institutional identity — while maintaining professionalism and patient confidentiality throughout.</p>
+
+    <div class="detail-grid">
+      <div class="detail-item">
+        <h4>Client</h4>
+        <p>Institute of Medical Sciences (IMS), Banaras Hindu University</p>
+      </div>
+      <div class="detail-item">
+        <h4>Location</h4>
+        <p>Varanasi, India</p>
+      </div>
+      <div class="detail-item">
+        <h4>Industry</h4>
+        <ul><li>Healthcare</li><li>Medical Education</li><li>Research</li></ul>
+      </div>
+      <div class="detail-item">
+        <h4>Services</h4>
+        <ul>
+          <li>Corporate Photography</li>
+          <li>Medical Conference Photography</li>
+          <li>Clinical Documentation</li>
+          <li>Institutional Branding</li>
+          <li>Editorial Photography</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div><div class="stat-num">4+</div><div class="stat-label">Major Assignments</div></div>
+  <div><div class="stat-num">1000+</div><div class="stat-label">Professional Images</div></div>
+  <div><div class="stat-num">Conference</div><div class="stat-label">Healthcare Documentation</div></div>
+  <div><div class="stat-num">Institution</div><div class="stat-label">Institutional Branding</div></div>
+</section>
+
+<section class="case" id="case-view">
+
+  <div class="case-block reveal" data-cat="ims-apsicon">
+    <div class="case-head">
+      <span class="case-num">01</span>
+      <h2 class="case-title">APSICON<br>Conference</h2>
+      <p class="case-desc">Professional documentation of one of India's leading surgical conferences — capturing keynote speakers, panel discussions, exhibitions, networking sessions, delegates, awards, and ceremonial moments.</p>
+      <div class="case-tags">
+        <span>Keynote Sessions</span><span>Scientific Discussions</span><span>Hands-on Workshops</span>
+        <span>Exhibition Area</span><span>Networking</span><span>Awards</span><span>Delegates</span>
+      </div>
+    </div>
+    <div class="reel-track" id="track-ims-apsicon"></div>
+  </div>
+
+  <div class="case-block reveal" data-cat="ims-surgical">
+    <div class="case-head">
+      <span class="case-num">02</span>
+      <h2 class="case-title">Surgical<br>Documentation</h2>
+      <p class="case-desc">Clinical documentation inside the operating environment, focused on teamwork, precision, sterile protocols, and healthcare excellence.</p>
+      <div class="case-tags">
+        <span>Operating Theatre</span><span>Surgical Team</span><span>Medical Equipment</span>
+        <span>Clinical Workflow</span><span>Team Coordination</span>
+      </div>
+      <p class="case-note">Shown here with restraint — professionalism, collaboration, and workflow, never graphic clinical imagery.</p>
+    </div>
+    <div class="reel-track" id="track-ims-surgical"></div>
+  </div>
+
+  <div class="case-block reveal" data-cat="ims-campus">
+    <div class="case-head">
+      <span class="case-num">03</span>
+      <h2 class="case-title">IMS<br>Campus</h2>
+      <p class="case-desc">Institutional branding photography showcasing campus infrastructure, laboratories, classrooms, faculty, students, research facilities, and the academic environment.</p>
+      <div class="case-tags">
+        <span>Campus</span><span>Laboratories</span><span>Faculty</span>
+        <span>Students</span><span>Research</span><span>Architecture</span>
+      </div>
+    </div>
+    <div class="reel-track" id="track-ims-campus"></div>
+  </div>
+
+  <div class="case-block reveal" data-cat="ims-ayurveda">
+    <div class="case-head">
+      <span class="case-num">04</span>
+      <h2 class="case-title">Ayurveda<br>Department</h2>
+      <p class="case-desc">Visual storytelling documenting traditional medicine — patient consultations, teaching, herbal medicine, research, and clinical practice.</p>
+      <div class="case-tags">
+        <span>Patient Care</span><span>Consultation</span><span>Teaching</span>
+        <span>Research</span><span>Herbal Medicine</span><span>Department</span>
+      </div>
+    </div>
+    <div class="reel-track" id="track-ims-ayurveda"></div>
+  </div>
+
+</section>
+
+<section class="full-section" id="full-view">
+  <div class="full-header">
+    <div>
+      <button class="full-back" id="full-back">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Back to case study
+      </button>
+      <h2 class="full-title" id="full-title"></h2>
+    </div>
+    <span class="full-count" id="full-count"></span>
+  </div>
+  <div class="masonry" id="full-grid"></div>
+</section>
+
+<section class="story">
+  <div>
+    <p class="label">Behind the Assignment</p>
+    <h2>Behind the Assignment</h2>
+  </div>
+  <div>
+    <p>Photographing one of India's leading medical institutions required balancing documentary storytelling with clinical ethics.</p>
+    <p>Every assignment demanded precision, discretion, and respect for patients, healthcare professionals, and institutional protocols.</p>
+    <p>The resulting work reflects not only medical excellence, but also the people, research, and dedication behind modern healthcare.</p>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <p class="label">My Role</p>
+  <div class="grid-cards">
+    <div class="card"><span>Photography</span></div>
+    <div class="card"><span>Event Coverage</span></div>
+    <div class="card"><span>Clinical Documentation</span></div>
+    <div class="card"><span>Color Grading</span></div>
+    <div class="card"><span>Image Editing</span></div>
+    <div class="card"><span>Asset Delivery</span></div>
+    <div class="card"><span>Institutional Storytelling</span></div>
+  </div>
+</section>
+
+<section style="padding-top:0;">
+  <p class="label">Client Impact</p>
+  <div class="impact-cards">
+    <div class="card"><span>Professional documentation</span></div>
+    <div class="card"><span>Institutional branding assets</span></div>
+    <div class="card"><span>Conference coverage</span></div>
+    <div class="card"><span>Healthcare storytelling</span></div>
+    <div class="card"><span>Academic communication</span></div>
+    <div class="card"><span>Marketing collateral</span></div>
+  </div>
+</section>
+
+<div class="next">
+  <img src="assets/images/ims-campus/campus_01.jpg" alt="">
+  <div class="next-content">
+    <div class="next-side">
+      <p>Previous</p>
+      <h3><a href="portfolio.html#fashion">Fashion</a></h3>
+    </div>
+    <div class="next-side right">
+      <p>Next</p>
+      <h3><a href="portfolio.html#commercial">Commercial</a></h3>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-brand">Frames</div>
+  <div class="footer-copy">© <span class="footer-year">2025</span> All rights reserved</div>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/indian_ghummakad98" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://www.linkedin.com/in/ravish-bramhe-965a94184/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</footer>
+
+<div id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+  <button class="lb-close" id="lb-close" aria-label="Close"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  <button class="lb-nav lb-prev" id="lb-prev" aria-label="Previous"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg></button>
+  <div class="lb-img-wrap"><img id="lb-img" src="" alt=""></div>
+  <button class="lb-nav lb-next" id="lb-next" aria-label="Next"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button>
+  <div class="lb-meta"><span id="lb-counter" class="amber"></span><span id="lb-category"></span></div>
+</div>
+
+<script src="assets/js/ims-gallery-data.js"></script>
+<script>
+(function(){
+  const burger = document.getElementById('nav-burger');
+  const mobileNav = document.getElementById('mobile-nav');
+  if (burger && mobileNav){
+    burger.addEventListener('click', () => {
+      mobileNav.classList.toggle('open');
+      const isOpen = mobileNav.classList.contains('open');
+      burger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    mobileNav.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        mobileNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  const labels = {
+    'ims-apsicon': 'APSICON Conference',
+    'ims-surgical': 'Surgical Documentation',
+    'ims-campus': 'IMS Campus',
+    'ims-ayurveda': 'Ayurveda Department'
+  };
+  const data = (typeof IMS_GALLERY !== 'undefined') ? IMS_GALLERY : {};
+  const categories = Object.keys(labels);
+
+  let lbItems = [];
+  let lbIdx = 0;
+
+  const prog = document.getElementById('scroll-progress');
+  window.addEventListener('scroll', () => {
+    const max = document.body.scrollHeight - window.innerHeight;
+    prog.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+  }, { passive:true });
+
+  categories.forEach(cat => {
+    const files = data[cat] || [];
+    const track = document.getElementById('track-' + cat);
+    if (!track) return;
+    files.forEach((filename, fi) => {
+      const src = `assets/images/${cat}/${filename}`;
+      const frame = document.createElement('div');
+      frame.className = 'frame';
+      frame.dataset.cat = cat;
+      frame.dataset.idx = fi;
+
+      const img = new Image();
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.alt = `${labels[cat]} photograph`;
+      img.addEventListener('load', () => {
+        const ratio = img.naturalWidth / img.naturalHeight;
+        frame.style.width = (380 * ratio) + 'px';
+        img.classList.add('loaded');
+      });
+      img.addEventListener('error', () => { frame.style.display = 'none'; });
+      img.src = src;
+
+      const tab = document.createElement('span');
+      tab.className = 'frame-tab';
+      tab.textContent = String(fi+1).padStart(2,'0');
+
+      frame.appendChild(img);
+      frame.appendChild(tab);
+      frame.addEventListener('click', () => openCategoryLightbox(cat, fi));
+      track.appendChild(frame);
+    });
+  });
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in-view'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(r => io.observe(r));
+
+  document.querySelectorAll('.case-title').forEach(t => {
+    t.style.cursor = 'pointer';
+    t.addEventListener('click', () => {
+      const cat = t.closest('.case-block').dataset.cat;
+      openFullView(cat);
+    });
+  });
+
+  const caseView = document.getElementById('case-view');
+  const fullView = document.getElementById('full-view');
+  const fullGrid = document.getElementById('full-grid');
+  const fullTitle = document.getElementById('full-title');
+  const fullCount = document.getElementById('full-count');
+
+  function openFullView(cat){
+    const files = data[cat] || [];
+    fullTitle.textContent = labels[cat] || cat;
+    fullCount.textContent = files.length + ' frames';
+    fullGrid.innerHTML = '';
+
+    files.forEach((filename, fi) => {
+      const src = `assets/images/${cat}/${filename}`;
+      const item = document.createElement('div');
+      item.className = 'grid-item';
+      const img = new Image();
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.alt = `${labels[cat]} photograph`;
+      img.addEventListener('load', () => img.classList.add('loaded'));
+      img.addEventListener('error', () => { item.style.display = 'none'; });
+      img.src = src;
+      item.appendChild(img);
+      item.addEventListener('click', () => openCategoryLightbox(cat, fi));
+      fullGrid.appendChild(item);
+    });
+
+    caseView.classList.add('hidden');
+    caseView.style.display = 'none';
+    fullView.classList.add('active');
+    window.scrollTo(0, 0);
+    history.pushState({ view:'full', cat }, '', '#' + cat);
+  }
+
+  function closeFullView(){
+    fullView.classList.remove('active');
+    caseView.style.display = '';
+    window.scrollTo(0, 0);
+    history.pushState({ view:'case' }, '', '#');
+  }
+
+  document.getElementById('full-back').addEventListener('click', closeFullView);
+
+  window.addEventListener('popstate', (e) => {
+    if (e.state && e.state.view === 'full') openFullView(e.state.cat);
+    else closeFullView();
+  });
+
+  const initialHash = location.hash.replace('#','');
+  if (initialHash && categories.includes(initialHash)) openFullView(initialHash);
+
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lb-img');
+  const lbCounter = document.getElementById('lb-counter');
+  const lbCat = document.getElementById('lb-category');
+
+  function openCategoryLightbox(cat, startIdx){
+    const files = data[cat] || [];
+    lbItems = files.map(f => ({ src: `assets/images/${cat}/${f}`, cat }));
+    lbIdx = startIdx;
+    showLB();
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function showLB(){
+    const item = lbItems[lbIdx];
+    lbImg.src = item.src;
+    lbCounter.textContent = String(lbIdx+1).padStart(2,'0') + ' / ' + String(lbItems.length).padStart(2,'0');
+    lbCat.textContent = labels[item.cat] || item.cat;
+  }
+  function closeLB(){ lb.hidden = true; document.body.style.overflow=''; lbImg.src=''; }
+  function navLB(dir){ lbIdx = (lbIdx + dir + lbItems.length) % lbItems.length; showLB(); }
+
+  document.getElementById('lb-close').addEventListener('click', closeLB);
+  document.getElementById('lb-prev').addEventListener('click', () => navLB(-1));
+  document.getElementById('lb-next').addEventListener('click', () => navLB(1));
+  lb.addEventListener('click', e => { if (e.target === lb) closeLB(); });
+  document.addEventListener('keydown', e => {
+    if (lb.hidden) return;
+    if (e.key === 'Escape') closeLB();
+    if (e.key === 'ArrowLeft') navLB(-1);
+    if (e.key === 'ArrowRight') navLB(1);
+  });
+
+})();
+</script>
+</body>
+</html>
