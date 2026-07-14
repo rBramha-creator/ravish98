@@ -86,7 +86,7 @@
   #mobile-nav a.active{ color:var(--amber); }
 
   .hero{
-    position:relative; height:100vh; min-height:560px;
+    position:relative; height:100vh; height:100svh; min-height:560px;
     display:flex; flex-direction:column; justify-content:flex-end;
     overflow:hidden;
   }
@@ -260,6 +260,7 @@
   }
   .grid-item img.loaded{ opacity:1; }
   .grid-item:hover img{ transform:scale(1.035); filter:grayscale(0) contrast(1.05); }
+  .grid-item:active img{ transform:scale(1.015); filter:grayscale(0) contrast(1.05); }
 
   #lightbox{
     position:fixed; inset:0; z-index:999; background:rgba(8,8,8,0.97);
@@ -270,13 +271,19 @@
   #lb-img{ max-width:90vw; max-height:86vh; width:auto; height:auto; display:block; }
   .lb-close,.lb-nav{
     position:fixed; background:none; border:none; cursor:pointer;
-    color:rgba(42,18,12,0.55); transition:color 0.2s; padding:10px; z-index:1000;
+    color:rgba(42,18,12,0.55); transition:color 0.2s; padding:14px; z-index:1000;
+    display:flex; align-items:center; justify-content:center;
+    min-width:44px; min-height:44px;
   }
   .lb-close:hover,.lb-nav:hover{ color:var(--amber); }
-  .lb-close{ top:20px; right:24px; }
+  .lb-close{ top:12px; right:12px; }
   .lb-nav{ top:50%; transform:translateY(-50%); }
-  .lb-prev{ left:14px; }
-  .lb-next{ right:14px; }
+  .lb-prev{ left:4px; }
+  .lb-next{ right:4px; }
+  @media(max-width:600px){
+    .lb-nav svg, .lb-close svg{ width:26px; height:26px; }
+    .lb-meta{ bottom:14px; font-size:10px; }
+  }
   .lb-meta{
     position:fixed; bottom:22px; left:50%; transform:translateX(-50%);
     font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gray);
@@ -330,6 +337,8 @@
     transition:transform 0.7s cubic-bezier(0.22,1,0.36,1), filter 0.4s ease;
   }
   .case-card:hover .case-card-media img{ transform:scale(1.045); filter:grayscale(0.05) contrast(1.05) brightness(0.9); }
+  .case-card:active{ border-color:rgba(253,248,238,0.3); }
+  .case-card:active .case-card-media img{ transform:scale(1.02); filter:grayscale(0.05) contrast(1.05) brightness(0.9); }
   .case-card-tag{
     position:absolute; top:20px; left:20px;
     font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(253,248,238,0.9);
@@ -659,6 +668,22 @@
     if (e.key === 'ArrowLeft') navLB(-1);
     if (e.key === 'ArrowRight') navLB(1);
   });
+
+  // swipe left/right to navigate the lightbox on touch devices
+  let touchStartX = null, touchStartY = null;
+  lb.addEventListener('touchstart', e => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive:true });
+  lb.addEventListener('touchend', e => {
+    if (touchStartX === null) return;
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    const dy = e.changedTouches[0].clientY - touchStartY;
+    if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) {
+      navLB(dx < 0 ? 1 : -1);
+    }
+    touchStartX = null; touchStartY = null;
+  }, { passive:true });
 
 })();
 </script>
