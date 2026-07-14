@@ -187,7 +187,7 @@
       </div>
 
       <button type="submit" class="form-submit">Send message</button>
-      <p class="form-note">This form isn't connected to an inbox yet — for now, email <a href="mailto:ravishbramhe@gmail.com" style="color:var(--gray); text-decoration:underline;">ravishbramhe@gmail.com</a> directly and I'll get back to you within 1–2 days.</p>
+      <p class="form-note">Hitting send opens your email app with this filled in, ready to go — or reach me directly at <a href="mailto:ravishbramhe@gmail.com" style="color:var(--gray); text-decoration:underline;">ravishbramhe@gmail.com</a>. I'll get back to you within 1–2 days.</p>
     </form>
   </div>
 </section>
@@ -209,10 +209,21 @@
 
 <script src="assets/js/site.js"></script>
 <script>
-  // Placeholder submit handler — replace with real form backend.
+  // Opens the visitor's email app with a pre-filled message — works with zero backend.
+  // To upgrade later: sign up at formspree.io (free), swap this handler for a real POST to your form endpoint.
   document.getElementById('contact-form').addEventListener('submit', function(e){
     e.preventDefault();
-    alert('This form is not yet connected to an inbox. Please email ravishbramhe@gmail.com directly, or wire this form up to a service like Formspree.');
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const project = document.getElementById('project');
+    const projectLabel = project.value ? project.options[project.selectedIndex].text : 'Not specified';
+    const message = document.getElementById('message').value.trim();
+
+    const subject = encodeURIComponent(`New project inquiry from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\nProject type: ${projectLabel}\n\n${message}`
+    );
+    window.location.href = `mailto:ravishbramhe@gmail.com?subject=${subject}&body=${body}`;
   });
 </script>
 </body>
